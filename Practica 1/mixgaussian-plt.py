@@ -11,10 +11,10 @@ ax.set_xscale('log');
 ax.set_xticks([1,2,5,10,20,50,100,200])
 ax.set_xticklabels([1,2,5,10,20,50,100,200])
 ax.set_ylim([0,6]);
-ax.set_ylabel('error de clasificacion');
+ax.set_ylabel('Error de clasificacion');
 ax.set_yticks(range(7))
-ax.plot(data[:,0], data[:,1], label = 'tr', lw = 1, marker = 'o', markersize = 5)
-ax.plot(data[:,0], data[:,2], label = 'dv', lw = 1, marker = 'x', markersize = 5)
+ax.plot(data[:,0], data[:,1], label = 'Entrenamiento', lw = 1, marker = 'o', markersize = 4)
+ax.plot(data[:,0], data[:,2], label = 'Test', lw = 1, marker = 'x', markersize = 4)
 ax.legend();
 plt.savefig('mixgaussian-K.pdf');
 plt.show();
