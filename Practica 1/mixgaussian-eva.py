@@ -26,8 +26,8 @@ k = sys.argv[3]
 fn = sys.argv[4]
 
 # Normalizamos los datos
-mu = np.mean(Xdv,axis=0)
-sigma = np.std(Xdv,axis=0)
+mu = np.mean(Xdv, axis = 0)
+sigma = np.std(Xdv, axis = 0)
 sigma[sigma == 0] = 1
 Xdv = (Xdv - mu) / sigma
 

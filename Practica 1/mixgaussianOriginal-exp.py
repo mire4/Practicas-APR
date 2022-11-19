@@ -13,7 +13,7 @@ xl=np.load(sys.argv[2])['xl'];
 trper=int(sys.argv[3]);
 dvper=int(sys.argv[4]);
 
-K=2;
+K=5;
 rc=0.1;
 seed=23;
 
@@ -52,7 +52,7 @@ for c,lab in enumerate(labs):
   gtr[c]=math.log(pc)+gmm.score_samples(Xtr); #score_samples nos devuelve el LL(0)
   gdv[c]=math.log(pc)+gmm.score_samples(Xdv);
   model.append((pc,gmm));
-  
+print(gdv)
 # Classification of training and eval sets for error estimation
 idx=np.argmax(gtr,axis=0);
 etr=np.mean(np.not_equal(labs[idx],xltr))*100;
@@ -63,5 +63,5 @@ print('  K      rc   etr   edv')
 print('--- ------- ----- -----')
 print(f'{K:3} {rc:3.1e} {etr:5.2f} {edv:5.2f}');
 
-filename = 'gmm.K2.rc0.1.mod'
+filename = 'gmm.K5.rc0.1.mod'
 pickle.dump(model, open(filename, 'wb'))

@@ -58,8 +58,6 @@ sigma[sigma == 0] = 1
 Xtr = (Xtr - mu) / sigma
 Xdv = (Xdv - mu) / sigma
 
-# Parameter estimation and soring samples
-model = []
 gmm = {}
 idx = {}
 etr = {}
@@ -74,6 +72,7 @@ print('{:<8} {:<15} {:<10} {:<10}'.format('K','RC','ETR','EDV'))
 
 for ind, value in enumerate(K):
   # print('Para ' + str(value) + ' componentes por clase')
+  model = []
   for c, lab in enumerate(labs):
     # print('Etiqueta ' + str(lab))
     Xtrc = Xtr[xltr == lab]
@@ -85,7 +84,7 @@ for ind, value in enumerate(K):
     gdv[c] = math.log(pc) + gmm[ind].score_samples(Xdv)
     model.append((pc, gmm[ind]))
 
-  # Estimacion del error
+  # Estimacion del error. Printear esto
   idx[ind] = np.argmax(gtr, axis = 0)
   etr[ind] = np.mean(np.not_equal(labs[idx[ind]], xltr)) * 100
   idx[ind] = np.argmax(gdv,axis = 0)
