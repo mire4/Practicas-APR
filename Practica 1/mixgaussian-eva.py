@@ -35,7 +35,7 @@ model = pickle.load(open(fn, 'rb'))
 
 C = len(model)
 M = Xdv.shape[0]
-gdv = np.zeros((C,M))
+gdv = np.zeros((C, M))
 
 for c, (pc, gmm) in enumerate(model):
   gdv[c] = math.log(pc) + gmm.score_samples(Xdv)

@@ -38,11 +38,11 @@ xl = xl[perm]
 
 # Seleccionamos el conjunto de entrenamiento y test
 Ntr = round(trper / 100 * N)
-Xtr = X[:Ntr,:]
+Xtr = X[:Ntr, :]
 xltr = xl[:Ntr]
-Ndv = round(dvper/100*N)
-Xdv = X[N-Ndv:,:]
-xldv = xl[N-Ndv:]
+Ndv = round(dvper / 100 * N)
+Xdv = X[N - Ndv:, :]
+xldv = xl[N - Ndv:]
 
 labs = np.unique(xltr).astype(int)
 C = labs.shape[0]
