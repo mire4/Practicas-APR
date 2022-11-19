@@ -13,8 +13,8 @@ ax.set_xticklabels([1,2,5,10,20,50,100,200])
 ax.set_ylim([0,6]);
 ax.set_ylabel('error de clasificacion');
 ax.set_yticks(range(7))
-ax.plot(data[:,0], data[:,1], label='tr', lw=2, marker='o', markersize=10)
-ax.plot(data[:,0], data[:,2], label='dv', lw=2, marker='x', markersize=10)
+ax.plot(data[:,0], data[:,1], label = 'tr', lw = 1, marker = 'o', markersize = 5)
+ax.plot(data[:,0], data[:,2], label = 'dv', lw = 1, marker = 'x', markersize = 5)
 ax.legend();
 plt.savefig('mixgaussian-K.pdf');
 plt.show();
