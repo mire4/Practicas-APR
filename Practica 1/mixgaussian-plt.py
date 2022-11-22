@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Cargamos los ficheros
-dataExp = np.loadtxt('mixgaussian-exp.out')
-dataEva = np.loadtxt('mixgaussian-eva.out')
+dataExp = np.loadtxt('mixgaussian-rc0.02-exp.out')
+dataEva = np.loadtxt('mixgaussian-rc0.02-eva.out')
 
 fig, ax = plt.subplots()
 ax.set_title('MNIST con 90% entrenamiento y 10% validación')
@@ -25,5 +25,5 @@ ax.plot(dataEva[:,0], dataEva[:,1], label = 'Eva', lw = 0, marker = 'd', markers
 
 ax.legend()
 
-plt.savefig('mixgaussian-K.pdf');
+plt.savefig('mixgaussian-K-rc0.02.pdf');
 plt.show()

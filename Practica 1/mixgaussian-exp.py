@@ -27,7 +27,7 @@ trper = int(sys.argv[4])
 dvper = int(sys.argv[5])
 
 K = np.fromstring(sys.argv[3], dtype = int, sep = ' ')
-rc = 0.1
+rc = 0.02
 seed = 23
 
 N = X.shape[0]
@@ -65,7 +65,7 @@ edv = {}
 
 # Abrimos un fichero de tipo .out para escribir el error del entrenamiento 
 # y del test segun el numero de componentes usadas por clase.
-file = open('mixgaussian-exp.out', 'w')
+file = open('mixgaussian-rc0.02-exp.out', 'w')
 
 #Formato para verlo en el terminal
 print('{:<8} {:<15} {:<10} {:<10}'.format('K','RC','ETR','EDV'))
@@ -102,7 +102,7 @@ for ind, value in enumerate(K):
   print('{:<8} {:<15.1e} {:<10.2f} {:<10.2f}'.format(value, rc, (etr[ind]), (edv[ind])))
 
   # Con este comando codificamos en binario el modelo
-  filename = 'gmm.K' + str(value) + '.rc0.1.mod'
+  filename = 'gmm.K' + str(value) + '.rc0.02.mod'
   pickle.dump(model, open(filename, 'wb'))
 
 # Cerramos el archivo .out
