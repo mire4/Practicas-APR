@@ -24,7 +24,7 @@ dv /= S
 # probamos diferentes valores para el parámetro de penalización C, C>0,
 # y hallamos el error en tr y dv para cada uno de ellos
 for C in [1e-3, 1e-2, 1e-1, 1, 1e1, 1e2, 1e3, 1e4]:
-  clf = svm.SVC(kernel = 'poly', C = C).fit(tr, trl)
+  clf = svm.SVC(kernel = 'poly', C = C, degree=2).fit(tr, trl)
   etr = (trl != clf.predict(tr)).mean()
   edv = (dvl != clf.predict(dv)).mean()
   print("%8g %8.2f %8.2f" % (C, etr * 100, edv * 100))

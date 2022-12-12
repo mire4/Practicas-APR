@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-d = np.loadtxt('sigmoid.out')
+d = np.loadtxt('sigmoidG10.0.out')
 fig, ax = plt.subplots()
 ax.set_title('Kernel sigmoide en MNIST con tr 12k y dv 6k')
 ax.grid()
@@ -14,5 +14,5 @@ ax.set_ylabel('Error de clasificación')
 ax.plot(d[:, 0], d[:, 1], label = 'tr', lw = 2, marker = 'o', markersize = 10)
 ax.plot(d[:, 0], d[:, 2], label = 'dv', lw = 2, marker = 'x', markersize = 10)
 ax.legend()
-plt.savefig('sigmoid.pdf')
+plt.savefig('sigmoidG10.0.pdf')
 plt.show()
