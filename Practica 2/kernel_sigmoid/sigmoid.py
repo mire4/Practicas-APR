@@ -23,11 +23,11 @@ dv /= S
 
 # probamos diferentes valores para el parámetro de penalización C, C>0,
 # y hallamos el error en tr y dv para cada uno de ellos
-for g in [1e-1, 1, 1e1]:
-  filename = 'sigmoidG' + str(g) + '.out'
+for coef in [1e-2, 1e-3]:
+  filename = 'sigmoidCoef' + str(coef) + '.out'
   file = open(filename, 'w')
   for C in [1e-3, 1e-2, 1e-1, 1, 1e1, 1e2, 1e3, 1e4]:
-    clf = svm.SVC(kernel = 'sigmoid', C = C).fit(tr, trl)
+    clf = svm.SVC(kernel = 'sigmoid', C = C, gamma = 0.1, coef0=coef).fit(tr, trl)
     etr = (trl != clf.predict(tr)).mean()
     edv = (dvl != clf.predict(dv)).mean()
 
