@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-d = np.loadtxt('rbfDefault.out')
+d = np.loadtxt('rbfG0.1.out')
 
 fig, ax = plt.subplots()
 ax.set_title('Kernel rbf (gaussian) en MNIST con tr 12k y dv 6k')
