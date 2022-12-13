@@ -18,5 +18,4 @@ Esta práctica consiste en entrenar un clasificador basado en mixturas de gaussi
 
 ## Práctica 2
 #### SVMs
-Esta práctica consiste en ver algunas actividades guiadas para el entrenamiento de SVMs con kernel lineal en MNIST y aplicaremos el clasificador de mixturas de Gaussianas a MNIST
-proyectada mediante PCA a 20 dimensiones. Repite el experimento con el kernel lineal haciendo uso de los otros tres kernels disponibles: poly, rbf y sigmoid.
+Esta práctica consiste en ver algunas actividades guiadas para el entrenamiento de SVMs con kernel lineal en MNIST. Repetimos el experimento haciendo uso de los otros tres kernels disponibles: poly, rbf y sigmoid.
